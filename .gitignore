@@ -1,0 +1,8 @@
+/Firmware/DigitalClock/Debug/*.o
+/Firmware/DigitalClock/Debug/*.d
+/Firmware/DigitalClock/Debug/*.lss
+/Firmware/DigitalClock/Debug/*.map
+/Firmware/DigitalClock/Release/*.d
+/Firmware/DigitalClock/Release/*.o
+/Firmware/DigitalClock/Release/*.lss
+/Firmware/DigitalClock/Release/*.map
