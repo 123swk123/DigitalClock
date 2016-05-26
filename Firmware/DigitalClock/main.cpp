@@ -1,9 +1,21 @@
-/*
- * RTC_Test.cpp
- *
- * Created: 23-05-2016 00:18:50
- * Author : karthikeyan
- */ 
+/************************************************************************
+* Copyright (C) 2016 SwK(123swk123@gmail.com)
+*
+* main.cpp is part of Digital Clock.
+*
+* Digital Clock is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+* 
+* Digital Clock is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with Digital Clock.  If not, see <http://www.gnu.org/licenses/>.
+************************************************************************/
 
 #include <avr/io.h>
 #include <stdio.h>
@@ -18,8 +30,8 @@
 int main(void)
 {
   // Crystal Oscillator division factor: 2
-  CLKPR=(1<<CLKPCE);
-  CLKPR=(0<<CLKPCE) | (0<<CLKPS3) | (0<<CLKPS2) | (0<<CLKPS1) | (1<<CLKPS0);
+  //CLKPR=(1<<CLKPCE);
+  //CLKPR=(0<<CLKPCE) | (0<<CLKPS3) | (0<<CLKPS2) | (0<<CLKPS1) | (1<<CLKPS0);
 
   char strBuff[16];
   
@@ -44,7 +56,7 @@ int main(void)
   
   objRTC->GetClock(&sTime);
  
-  uint8_t u8strLen = sprintf_P(strBuff, "TIME:%X:%X:%X\r\n", sTime.u8Hours, sTime.u8Minutes, sTime.u8Seconds);
+  uint8_t u8strLen = sprintf(strBuff, "TIME:%X:%X:%X\r\n", sTime.u8Hours, sTime.u8Minutes, sTime.u8Seconds);
 
   objUart.Send(0, (uint8_t*)strBuff, u8strLen);
   }
